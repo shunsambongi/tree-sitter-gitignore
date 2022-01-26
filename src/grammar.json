@@ -52,7 +52,7 @@
     },
     "comment": {
       "type": "PATTERN",
-      "value": "#[^\\r\\n]*"
+      "value": "#[^\\n]*"
     },
     "pattern": {
       "type": "SEQ",
@@ -179,7 +179,7 @@
     },
     "pattern_char": {
       "type": "PATTERN",
-      "value": "[^\\r\\n/*?]"
+      "value": "[^\\n/*?]"
     },
     "pattern_char_escaped": {
       "type": "SEQ",
@@ -190,7 +190,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "[^\\r\\n/]"
+          "value": "[^\\n/]"
         }
       ]
     },
@@ -369,7 +369,7 @@
     },
     "bracket_char": {
       "type": "PATTERN",
-      "value": "[^\\n\\r/\\]]"
+      "value": "[^\\n/\\]]"
     },
     "bracket_char_escaped": {
       "type": "SEQ",
@@ -380,7 +380,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "[^\\n\\r/]"
+          "value": "[^\\n/]"
         }
       ]
     },

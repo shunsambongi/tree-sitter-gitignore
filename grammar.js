@@ -31,7 +31,7 @@ module.exports = grammar({
         $._newline
       ),
 
-    comment: $ => /#[^\r\n]*/,
+    comment: $ => /#[^\n]*/,
 
     pattern: $ =>
       seq(
@@ -57,9 +57,9 @@ module.exports = grammar({
         )
       ),
 
-    pattern_char: $ => /[^\r\n/*?]/,
+    pattern_char: $ => /[^\n/*?]/,
 
-    pattern_char_escaped: $ => seq("\\", /[^\r\n/]/),
+    pattern_char_escaped: $ => seq("\\", /[^\n/]/),
 
     _wildcard: $ =>
       choice(
@@ -92,8 +92,8 @@ module.exports = grammar({
       seq($._bracket_char_closing_bracket, "-", $._bracket_char),
 
     _bracket_char: $ => choice($.bracket_char, $.bracket_char_escaped),
-    bracket_char: $ => /[^\n\r/\]]/,
-    bracket_char_escaped: $ => seq("\\", /[^\n\r/]/),
+    bracket_char: $ => /[^\n/\]]/,
+    bracket_char_escaped: $ => seq("\\", /[^\n/]/),
 
     bracket_range: $ => seq($._bracket_char, "-", $._bracket_char),
 
