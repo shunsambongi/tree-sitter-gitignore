@@ -1,0 +1,5 @@
+root = true
+
+[*.txt]
+indent_size = 2
+

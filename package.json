@@ -1,0 +1,34 @@
+{
+  "name": "tree-sitter-gitignore",
+  "version": "0.1.0",
+  "description": "Gitignore grammar for tree-sitter",
+  "main": "bindings/node",
+  "scripts": {
+    "build": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "keywords": [
+    "parser",
+    "lexer"
+  ],
+  "author": "Shun Sambongi",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.15.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.1"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.gitignore",
+      "file-types": [
+        ".gitignore",
+        ".ignore",
+        ".fdignore",
+        ".rgignore"
+      ]
+    }
+  ]
+}
