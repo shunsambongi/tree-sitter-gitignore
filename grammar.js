@@ -50,14 +50,14 @@ module.exports = grammar({
     _pattern: $ =>
       repeat1(
         choice(
-          $.pattern_char,
+          $.pattern_chars,
           $.pattern_char_escaped,
           $._wildcard,
           $.bracket_expr
         )
       ),
 
-    pattern_char: $ => /[^\n/*?]/,
+    pattern_chars: $ => /[^\n/*?\[\\]+/,
 
     pattern_char_escaped: $ => seq("\\", /[^\n/]/),
 

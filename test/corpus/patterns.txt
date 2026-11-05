@@ -8,9 +8,7 @@ abc
 
 (document
   (pattern
-    (pattern_char)
-    (pattern_char)
-    (pattern_char)))
+    (pattern_chars)))
 
 =======
 comment
@@ -33,10 +31,7 @@ negation
 
 (document
   (pattern
-    (negation)
-    (pattern_char)
-    (pattern_char)
-    (pattern_char)))
+    (pattern_chars)))
 
 ======
 escaping
@@ -58,7 +53,7 @@ a\
   (pattern
     (pattern_char_escaped))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (pattern_char_escaped)))
 
 ==================================
@@ -74,16 +69,16 @@ a/b
 (document
   (pattern
     relative_flag: (directory_separator)
-    (pattern_char))
+    (pattern_chars))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     relative_flag: (directory_separator)
-    (pattern_char))
+    (pattern_chars))
   (pattern
     relative_flag: (directory_separator)
-    (pattern_char)
+    (pattern_chars)
     relative_flag: (directory_separator)
-    (pattern_char)))
+    (pattern_chars)))
 
 ===================================
 directory separator: directory flag
@@ -97,18 +92,18 @@ a/b/
 
 (document
   (pattern
-    (pattern_char)
+    (pattern_chars)
     directory_flag: (directory_separator))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     relative_flag: (directory_separator)
-    (pattern_char)
+    (pattern_chars)
     directory_flag: (directory_separator))
   (pattern
     relative_flag: (directory_separator)
-    (pattern_char)
+    (pattern_chars)
     relative_flag: (directory_separator)
-    (pattern_char)
+    (pattern_chars)
     directory_flag: (directory_separator)))
 
 ==========================
@@ -124,14 +119,14 @@ a?b
 (document
   (pattern
     (wildcard_char_single)
-    (pattern_char))
+    (pattern_chars))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (wildcard_char_single))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (wildcard_char_single)
-    (pattern_char)))
+    (pattern_chars)))
 
 ==============
 wildcard: star
@@ -146,14 +141,14 @@ a*b
 (document
   (pattern
     (wildcard_chars)
-    (pattern_char))
+    (pattern_chars))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (wildcard_chars))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (wildcard_chars)
-    (pattern_char)))
+    (pattern_chars)))
 
 ==================
 wildcard: starstar
@@ -176,28 +171,27 @@ a**b
   (pattern
     (wildcard_chars_allow_slash)
     (directory_separator)
-    (pattern_char))
+    (pattern_chars))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (directory_separator)
     (wildcard_chars_allow_slash))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (directory_separator)
     (wildcard_chars_allow_slash)
     (directory_separator)
-    (pattern_char))
-
+    (pattern_chars))
   (pattern
     (wildcard_chars_allow_slash)
-    (pattern_char))
+    (pattern_chars))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (wildcard_chars_allow_slash))
   (pattern
-    (pattern_char)
+    (pattern_chars)
     (wildcard_chars_allow_slash)
-    (pattern_char)))
+    (pattern_chars)))
 
 ==============================
 bracket expression: characters
@@ -248,8 +242,7 @@ bracket expression: characters escaped
     (bracket_expr
       (bracket_char)
       (bracket_char_escaped)
-      (bracket_char)))
-  )
+      (bracket_char))))
 
 =========================
 bracket expression: range

@@ -1,0 +1,18 @@
+==================
+file_con_spazi_ignorati   
+file_con_spazi_validi\ \ \ 
+pazi ignorati ed escaped in coda
+==================
+file_con_spazi_ignorati   
+file_con_spazi_validi\ \ \ 
+
+---
+
+(document
+  (pattern
+    (pattern_chars))
+  (pattern
+    (pattern_chars)
+    (pattern_char_escaped)
+    (pattern_char_escaped)
+    (pattern_char_escaped)))

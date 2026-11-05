@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "gitignore",
   "rules": {
     "document": {
@@ -160,7 +161,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "pattern_char"
+            "name": "pattern_chars"
           },
           {
             "type": "SYMBOL",
@@ -177,9 +178,9 @@
         ]
       }
     },
-    "pattern_char": {
+    "pattern_chars": {
       "type": "PATTERN",
-      "value": "[^\\n/*?]"
+      "value": "[^\\n/*?\\[\\\\]+"
     },
     "pattern_char_escaped": {
       "type": "SEQ",
@@ -672,6 +673,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
-
