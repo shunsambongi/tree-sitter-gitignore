@@ -31,7 +31,11 @@ module.exports = grammar({
         $._newline
       ),
 
-    comment: $ => /#[^\n]*/,
+    comment: $ => token(seq(
+      optional(/[ \t]+/),
+      '#',
+      /[^\n]*/
+    )),
 
     pattern: $ =>
       seq(
