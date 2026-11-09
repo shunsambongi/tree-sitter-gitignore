@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "gitignore",
   "rules": {
     "document": {
@@ -51,8 +52,32 @@
       ]
     },
     "comment": {
-      "type": "PATTERN",
-      "value": "#[^\\n]*"
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[ \\t]+"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "STRING",
+            "value": "#"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[^\\n]*"
+          }
+        ]
+      }
     },
     "pattern": {
       "type": "SEQ",
@@ -160,7 +185,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "pattern_char"
+            "name": "pattern_chars"
           },
           {
             "type": "SYMBOL",
@@ -177,9 +202,9 @@
         ]
       }
     },
-    "pattern_char": {
+    "pattern_chars": {
       "type": "PATTERN",
-      "value": "[^\\n/*?]"
+      "value": "[^\\n/*?\\[\\\\]+"
     },
     "pattern_char_escaped": {
       "type": "SEQ",
@@ -672,6 +697,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
-

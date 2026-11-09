@@ -1,0 +1,24 @@
+==================
+Escape di cancelletto e spazi
+==================
+\#file_con_hash.txt
+cartella\ con\ spazi/
+!important\ #file.txt
+
+---
+
+(document
+  (pattern
+    (pattern_char_escaped)
+    (pattern_chars))
+  (pattern
+    (pattern_chars)
+    (pattern_char_escaped)
+    (pattern_chars)
+    (pattern_char_escaped)
+    (pattern_chars)
+    (directory_separator))
+  (pattern
+    (pattern_chars)
+    (pattern_char_escaped)
+    (pattern_chars)))

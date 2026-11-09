@@ -1,0 +1,23 @@
+==================
+Standard line comment
+==================
+# This is a comment
+  # Indented comment
+
+---
+(document
+  (comment)
+  (comment))
+
+==================
+Inline hash treated as pattern
+==================
+foo  # bar
+foo#bar
+
+---
+(document
+  (pattern
+  (pattern_chars))
+  (pattern
+  (pattern_chars)))
